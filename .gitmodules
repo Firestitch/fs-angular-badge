@@ -1,0 +1,5 @@
+[submodule "src/grunt"]
+	
+	path = src/grunt
+	
+	url = git@github.com:Firestitch/grunt.git

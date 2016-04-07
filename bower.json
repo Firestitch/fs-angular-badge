@@ -1,0 +1,19 @@
+{
+  "name": "fs-angular-tag", 
+  "description": "",
+  "main": [
+    "dist/tag.js",
+    "dist/tag.css"
+  ],
+   "dependencies": {
+  },
+  "authors": [
+    "Firestitch Inc."
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    ".gitignore"
+  ],
+  "private": false
+}
