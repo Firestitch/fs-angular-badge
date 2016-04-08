@@ -13,10 +13,10 @@
 
 .fs-badge.fs-badge-circle {
     min-width: initial;
-    height: 28px;
-    width: 28px;
+    height: 32px;
+    width: 32px;
     padding: 0;
-    line-height: 28px;
+    line-height: 32px;
     border-radius: 50%;
 }
 
