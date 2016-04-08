@@ -9,12 +9,12 @@
 
 
 angular.module('app')
-.directive('fsTagExtend', function() {
+.directive('fsBadgeExtend', function() {
     return {
-        template: '<fs-tag fs-color="tag.color" fs-label="tag.label" fs-tooltip="tag.label"></fs-tag>',
+        template: '<fs-badge fs-color="badge.color" fs-label="badge.label" fs-tooltip="badge.label"></fs-badge>',
         restrict: 'E',
         scope: {
-            tag: '=fsTag'
+            badge: '=fsBadge'
         },
         link: function ($scope, elem, attrs) {
         } 

@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('fs-angular-tag',[])
-    .directive('fsTag', function() {
+    angular.module('fs-angular-badge',[])
+    .directive('fsBadge', function() {
         return {
-            template: '<div class="fs-tag" ng-class="{ \'fs-tag-circle\': shape==\'circle\', \'fs-tag-image\': image }" ng-style="styles">{{circle}}<md-tooltip ng-show="tooltip">{{tooltip}}</md-tooltip>{{label}}</div>',
+            template: '<div class="fs-badge" ng-class="{ \'fs-badge-circle\': shape==\'circle\', \'fs-badge-image\': image }" ng-style="styles">{{circle}}<md-tooltip ng-show="tooltip">{{tooltip}}</md-tooltip>{{label}}</div>',
             restrict: 'E',
             replace: true,
             scope: {

@@ -1,9 +1,9 @@
 {
-  "name": "fs-angular-tag", 
+  "name": "fs-angular-badge", 
   "description": "",
   "main": [
-    "dist/tag.js",
-    "dist/tag.css"
+    "dist/badge.js",
+    "dist/badge.css"
   ],
    "dependencies": {
   },

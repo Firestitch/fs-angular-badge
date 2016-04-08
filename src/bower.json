@@ -1,6 +1,6 @@
 {
-  "name": "fs-angular-tag",
-  "namespace": "tag",
+  "name": "fs-angular-badge",
+  "namespace": "badge",
   "port": "5010",   
   "moduleName": "app",
   "version": "0.0.0",

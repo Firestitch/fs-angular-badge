@@ -5,7 +5,7 @@ angular
     'config',
     'ui.router',
     'ngMaterial',
-    'fs-angular-tag'    
+    'fs-angular-badge'    
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
