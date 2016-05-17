@@ -19,23 +19,57 @@
             link: function ($scope, elem, attrs) {
 
                 $scope.styles = {};
-                if($scope.color) {
-                    $scope.styles['background-color'] = $scope.color;
-                }
 
-                if($scope.size) {
-                    $scope.styles['width'] = $scope.size + 'px';
+                applyStyles($scope);
 
-                    if($scope.shape=='circle') {
-                        $scope.styles['height'] = $scope.size + 'px';
-                        $scope.styles['line-height'] = $scope.size + 'px';
+                var group = ['color', 'size', 'shape'];
+                $scope.$watchGroup(
+                    group,
+                    function(newValues, oldValues, scope) {
+                        if (newValues !== oldValues) {
+                            var newStyles = {};
+                            for (var i in group) {
+                                newStyles[group[i]] = newValues[i];
+                            }
+
+                            applyStyles(newStyles);
+                        }
+                    }
+                );
+
+                function applyStyles(styles) {
+                    if (styles['color']) {
+                        $scope.styles['background-color'] = styles['color'];
+                    }
+                    else {
+                        delete $scope.styles['background-color'];
+                    }
+
+                    if (styles['size']) {
+                        $scope.styles['width'] = styles['size'] + 'px';
+
+                        if (styles['shape'] == 'circle') {
+                            $scope.styles['height'] = styles['size'] + 'px';
+                            $scope.styles['line-height'] = styles['size'] + 'px';
+                        }
+                        else {
+                            delete $scope.styles['height'];
+                            delete $scope.styles['line-height'];
+                        }
+                    }
+                    else {
+                        delete $scope.styles['width'];
+                    }
+
+                    if(styles['image']) {
+                        $scope.styles['background-image'] = 'url(' + styles['image'] + ')';
+                    }
+                    else {
+                        delete $scope.styles['background-image'];
                     }
                 }
 
-                if($scope.image) {
-                    $scope.styles['background-image'] = 'url(' + $scope.image + ')';
-                }
-            } 
+            }// End of link() func
         };
     });
      
