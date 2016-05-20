@@ -5,7 +5,7 @@
     angular.module('fs-angular-badge',[])
     .directive('fsBadge', function() {
         return {
-            template: '<div class="fs-badge {{class}}" ng-class="{ \'fs-badge-circle\': shape==\'circle\', \'fs-badge-image\': image }" ng-style="styles">{{circle}}<md-tooltip ng-show="tooltip">{{tooltip}}</md-tooltip>{{label}}</div>',
+            template: '<div class="fs-badge {{class}}" ng-class="{ \'fs-badge-circle\': shape==\'circle\', \'fs-badge-image\': type==\'image\', \'fs-badge-text\': type==\'text\' }" ng-style="styles">{{circle}}<md-tooltip ng-show="tooltip">{{tooltip}}</md-tooltip>{{label}}</div>',
             restrict: 'E',
             replace: true,
             scope: {
@@ -18,7 +18,8 @@
                 class: '=fsClass'
             },
             link: function ($scope, elem, attrs) {
-
+                
+                $scope.type = attrs.fsImage===undefined ? 'text' : 'image';
                 $scope.styles = {};
                 if($scope.color) {
                     $scope.styles['background-color'] = $scope.color;
