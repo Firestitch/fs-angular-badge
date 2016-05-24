@@ -12,7 +12,7 @@
                 color: '=fsColor',
                 label: '=fsLabel',
                 tooltip: '=fsTooltip',
-                size: '=fsSize',
+                size: '=?fsSize',
                 shape: '=fsShape',
                 image: '=fsImage',
                 class: '=fsClass'
