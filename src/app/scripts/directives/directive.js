@@ -20,8 +20,8 @@
             link: function ($scope, elem, attrs) {
                 $scope.type = attrs.fsImage===undefined ? 'text' : 'image';
                 $scope.styles = {};
-                $scope.size = $scope.size || 30;
-           
+                //$scope.size = $scope.size || 30;
+
                 $scope.$watch(function(value) {
                     $scope.styles = {};
 
