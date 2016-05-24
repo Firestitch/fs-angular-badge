@@ -32,6 +32,7 @@
 
                     if ($scope.size) {
                         $scope.styles['width'] = $scope.size + 'px';
+                        $scope.styles['min-width'] = $scope.size + 'px';
 
                         if ($scope.shape == 'circle') {
                             $scope.styles['height'] = $scope.size + 'px';
