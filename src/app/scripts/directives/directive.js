@@ -12,7 +12,7 @@
                 color: '=fsColor',
                 label: '=fsLabel',
                 tooltip: '=fsTooltip',
-                size: '=fsSize',
+                size: '=?fsSize',
                 shape: '=fsShape',
                 image: '=fsImage',
                 class: '=fsClass'
@@ -20,8 +20,7 @@
             link: function ($scope, elem, attrs) {
                 $scope.type = attrs.fsImage===undefined ? 'text' : 'image';
                 $scope.styles = {};
-                $scope.size = $scope.size || 30;
-           
+                
                 $scope.$watchGroup(['color','size','image'],function(value) {
                     $scope.styles = {};
 
@@ -31,6 +30,7 @@
 
                     if ($scope.size) {
                         $scope.styles['width'] = $scope.size + 'px';
+                        $scope.styles['min-width'] = $scope.size + 'px';
 
                         if ($scope.shape == 'circle') {
                             $scope.styles['height'] = $scope.size + 'px';
