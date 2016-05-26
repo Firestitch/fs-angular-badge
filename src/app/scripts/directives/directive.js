@@ -22,7 +22,7 @@
                 $scope.styles = {};
                 $scope.size = $scope.size || 30;
            
-                $scope.$watch(function(value) {
+                $scope.$watchGroup(['color','size','image'],function(value) {
                     $scope.styles = {};
 
                     if ($scope.color) {
