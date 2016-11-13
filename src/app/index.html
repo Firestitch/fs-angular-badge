@@ -10,18 +10,19 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-    <!-- endbower -->    
+    <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/directives/badge.css" />
     <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
   </head>
   <body class="ng-cloak">
 
     <!-- View Container for "normal" pages -->
     <md-content layout="row" layout-align="center center">
-        <div flex="50">  
+        <div flex="50">
             <h1 ng-cloak>Demo {{app_name}}</h1>
             <div ui-view></div>
         </div>
@@ -35,22 +36,22 @@
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!-- endbower -->    
+    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,dist,app}) scripts/scripts.js -->
-    
+
     <script src="config/config.js"></script>
     <script src="scripts/app.js"></script>
 
     <script src="scripts/services/service.js"></script>
 
     <script src="scripts/directives/directive.js"></script>
-    
-    <script src="scripts/filters/filter.js"></script>    
-    
+
+    <script src="scripts/filters/filter.js"></script>
+
     <script src="scripts/controllers/demo.js"></script>
-    
+
     <!-- endbuild -->
 </body>
 </html>

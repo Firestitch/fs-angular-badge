@@ -6,7 +6,13 @@
     angular.module('fs-angular-badge',[])
     .directive('fsBadge', function() {
         return {
-            template: '<div class="fs-badge {{class}}" ng-class="{ \'fs-badge-circle\': shape==\'circle\', \'fs-badge-image\': type==\'image\', \'fs-badge-text\': type==\'text\' }" ng-style="styles">{{circle}}<md-tooltip ng-if="tooltip">{{tooltip}}</md-tooltip>{{label}}</div>',
+            template: '<div class="fs-badge {{class}}"\
+            				ng-class="{ \'fs-badge-circle\': shape==\'circle\', \'fs-badge-image\': type==\'image\', \'fs-badge-text\': type==\'text\' }"\
+            				ng-style="styles">\
+            					<md-icon ng-if="!image && icon"ng-style="iconStyle">{{icon}}</md-icon>\
+            					<md-tooltip ng-if="tooltip">{{tooltip}}</md-tooltip>\
+            					{{label}}\
+            			</div>',
             restrict: 'E',
             replace: true,
             scope: {
@@ -16,14 +22,16 @@
                 size: '=?fsSize',
                 shape: '=fsShape',
                 image: '=fsImage',
-                class: '=fsClass'
+                class: '=fsClass',
+                icon: '=fsIcon',
+                iconSize: '=fsIconSize',
+                iconColor: '=fsIconColor'
             },
             link: function ($scope, elem, attrs) {
                 $scope.type = attrs.fsImage===undefined ? 'text' : 'image';
                 $scope.styles = {};
-                //$scope.size = $scope.size || 30;
 
-                $scope.$watch(function(value) {
+                $scope.$watchGroup(['color','size','image'],function(value) {
                     $scope.styles = {};
 
                     if ($scope.color) {
@@ -44,10 +52,19 @@
                         $scope.styles['background-image'] = 'url(' + $scope.image + ')';
                     }
                 });
+
+                $scope.iconStyle = {};
+                if($scope.iconSize) {
+                	$scope.iconStyle['transform'] = 'scale(' + $scope.iconSize + ')';
+                }
+
+                if($scope.iconColor) {
+                	$scope.iconStyle['color'] = $scope.iconColor;
+                }
             }
         };
     });
-     
+
 })();
 
 
