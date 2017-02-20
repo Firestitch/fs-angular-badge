@@ -4,3 +4,4 @@
 /src/node_modules
 /*.sublime-workspace
 /src/docs
+.idea
